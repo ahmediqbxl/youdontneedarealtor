@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You Don't Need a Realtor — The Truth About Selling Your Home in Canada</title>
+  <meta name="description" content="Realtors carry the least liability, do the least work, and take the biggest cheque from your home sale. Here's what Canadians need to know." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🏠</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1f2e;
+      background: #f5f7fa;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-sm { padding: 56px 0; }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(6,13,26,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: #f87171; }
+    .nav-cta {
+      background: #4ade80; color: #0a2016; border: none; border-radius: 10px;
+      padding: 10px 20px; font-weight: 800; font-size: 13px; cursor: pointer;
+      font-family: inherit; transition: transform 0.15s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { transform: translateY(-1px); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(155deg, #060d1a 0%, #1a0a0a 45%, #0f2240 100%);
+      padding: 140px 0 80px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -200px; right: -100px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(248,113,113,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -100px; left: 20%;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,222,128,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero h1 {
+      color: #fff; font-size: 62px; font-weight: 800;
+      line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 24px;
+    }
+    .hero h1 .accent { color: #f87171; }
+    .hero .subtitle {
+      color: #94a3b8; font-size: 19px; line-height: 1.7;
+      max-width: 540px; margin-bottom: 40px;
+    }
+    .hero .subtitle strong { color: #e2e8f0; }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block; background: #4ade80; color: #0a2016; border: none;
+      border-radius: 14px; padding: 16px 36px; font-weight: 800; font-size: 16px;
+      cursor: pointer; font-family: inherit;
+      box-shadow: 0 8px 32px rgba(74,222,128,0.3); transition: transform 0.15s;
+      text-decoration: none;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block; background: transparent; color: #fff;
+      border: 2px solid rgba(255,255,255,0.25); border-radius: 14px;
+      padding: 14px 28px; font-weight: 700; font-size: 15px;
+      cursor: pointer; font-family: inherit; transition: border-color 0.15s;
+      text-decoration: none;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.5); }
+
+    /* Stats row */
+    .stats-row {
+      display: flex; gap: 48px; margin-top: 48px;
+    }
+    .stat-item .num {
+      font-size: 28px; font-weight: 800; color: #fff; letter-spacing: -0.02em;
+    }
+    .stat-item .label {
+      font-size: 12px; color: #475569; font-weight: 600; margin-top: 2px;
+    }
+
+    /* Red banner */
+    .banner {
+      background: #dc2626; padding: 40px 0; text-align: center;
+    }
+    .banner .eyebrow {
+      font-size: 12px; font-weight: 800; letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.7); text-transform: uppercase; margin-bottom: 12px;
+    }
+    .banner h2 {
+      color: #fff; font-size: 36px; font-weight: 800;
+      letter-spacing: -0.02em; max-width: 780px;
+      margin: 0 auto 14px; line-height: 1.15;
+    }
+    .banner p {
+      color: rgba(255,255,255,0.8); font-size: 17px; max-width: 580px;
+      margin: 0 auto; line-height: 1.65;
+    }
+
+    /* Breakdown section */
+    .breakdown-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;
+    }
+    .breakdown-card {
+      background: #fff; border-radius: 20px; padding: 32px 24px;
+      border: 1px solid #e0e4eb; position: relative;
+    }
+    .breakdown-card .icon { font-size: 36px; margin-bottom: 14px; }
+    .breakdown-card h3 {
+      font-size: 18px; font-weight: 800; margin-bottom: 8px;
+    }
+    .breakdown-card p {
+      font-size: 14px; color: #6b7280; line-height: 1.65;
+    }
+    .breakdown-card .tag {
+      position: absolute; top: 16px; right: 16px;
+      font-size: 11px; font-weight: 800; padding: 4px 10px;
+      border-radius: 10px;
+    }
+
+    /* Comparison table */
+    .compare-section { background: #fff; }
+    .compare-table {
+      width: 100%; border-collapse: collapse; margin-top: 32px;
+    }
+    .compare-table th {
+      text-align: left; padding: 14px 20px; font-size: 13px;
+      font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+      border-bottom: 2px solid #e0e4eb;
+    }
+    .compare-table th:first-child { color: #6b7280; }
+    .compare-table th:nth-child(2) { color: #dc2626; }
+    .compare-table th:nth-child(3) { color: #16a34a; }
+    .compare-table td {
+      padding: 16px 20px; border-bottom: 1px solid #f1f5f9;
+      font-size: 15px;
+    }
+    .compare-table td:first-child { font-weight: 700; }
+    .compare-table tr:last-child td { border-bottom: none; }
+
+    /* Calculator */
+    .calc-card {
+      background: #fff; border-radius: 24px; padding: 40px;
+      border: 1px solid #e0e4eb;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .slider {
+      width: 100%; accent-color: #2563eb; height: 6px;
+      padding: 0; border: none; border-radius: 4px;
+    }
+    .result-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 22px; border-radius: 16px; margin-bottom: 12px;
+    }
+
+    /* CTA bottom */
+    .cta-bottom {
+      background: linear-gradient(155deg, #060d1a 0%, #0f2240 50%, #0a2016 100%);
+      padding: 80px 0; text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background: #060d1a; color: #94a3b8; padding: 40px 0;
+      border-top: 1px solid #1e293b; text-align: center;
+    }
+    footer a { color: #4ade80; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Tag/eyebrow */
+    .eyebrow {
+      display: inline-block; font-size: 12px; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #2563eb; margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: 42px; font-weight: 800; line-height: 1.12;
+      letter-spacing: -0.03em; margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 16px; color: #6b7280; line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 38px; }
+      .hero .subtitle { font-size: 16px; }
+      .stats-row { flex-wrap: wrap; gap: 24px; }
+      .breakdown-grid { grid-template-columns: 1fr; }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 10px 12px; }
+      .section-title { font-size: 30px; }
+      .banner h2 { font-size: 26px; }
+      .hero-buttons { flex-direction: column; }
+      .calc-grid { grid-template-columns: 1fr !important; }
+      .liability-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">you<span>don't</span>needarealtor.</a>
+      <a href="https://closr.ca" class="nav-cta" target="_blank" rel="noopener">Try closr.ca</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(248,113,113,0.15);border:1px solid rgba(248,113,113,0.35);border-radius:20px;padding:6px 16px;margin-bottom:24px;">
+        <span style="font-size:14px">🇨🇦</span>
+        <span style="color:#fca5a5;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">What every homeowner should know</span>
+      </div>
+      <h1>
+        You don't need<br/>
+        a realtor to sell<br/>
+        <span class="accent">your home.</span>
+      </h1>
+      <p class="subtitle">
+        They carry the <strong>least liability</strong> in your transaction,
+        do work you could do yourself, and walk away with the
+        <strong>biggest cheque</strong>. It's time Canadians knew the truth.
+      </p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap" class="hero-buttons">
+        <a href="#the-truth" class="btn-primary">See the breakdown</a>
+        <a href="https://closr.ca" class="btn-outline" target="_blank" rel="noopener">Sell without an agent</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="num">$25,000+</div>
+          <div class="label">Avg. commission on Alberta home</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">5%</div>
+          <div class="label">Standard commission rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">0%</div>
+          <div class="label">Liability realtors carry at closing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section class="banner">
+    <div class="container">
+      <div class="eyebrow" style="color:rgba(255,255,255,0.7)">Follow the money</div>
+      <h2>In a home sale, the person who does the least<br/>walks away with the most.</h2>
+      <p>Your lawyer handles the legal transfer. Your mortgage broker handles the financing. Your home inspector checks the property. Your realtor? They unlock the door.</p>
+    </div>
+  </section>
+
+  <!-- WHO DOES WHAT -->
+  <section class="section" id="the-truth">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px">
+        <div class="eyebrow">The truth about your home sale</div>
+        <h2 class="section-title">Who actually does what<br/>in a real estate transaction?</h2>
+        <p class="section-subtitle" style="margin:12px auto 0">Every professional in your home sale carries liability and legal responsibility — except one.</p>
+      </div>
+      <div class="breakdown-grid">
+        <div class="breakdown-card">
+          <div class="tag" style="background:#f0fdf4;color:#16a34a">Legally required</div>
+          <div class="icon">&#9878;&#65039;</div>
+          <h3>Real Estate Lawyer</h3>
+          <p>Handles title transfer, mortgage registration, trust accounting, legal compliance. <strong>Carries full professional liability insurance.</strong> If they make an error, they pay.</p>
+          <div style="margin-top:16px;padding:12px 16px;background:#f0fdf4;border-radius:12px;border:1px solid #bbf7d0">
+            <div style="font-size:11px;font-weight:800;color:#16a34a;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Typical cost</div>
+            <div style="font-size:22px;font-weight:800;color:#16a34a">$1,200 – $2,000</div>
+          </div>
+        </div>
+        <div class="breakdown-card">
+          <div class="tag" style="background:#eff6ff;color:#2563eb">Your lender requires</div>
+          <div class="icon">&#127974;</div>
+          <h3>Mortgage Broker</h3>
+          <p>Secures your financing, compares rates across lenders, handles pre-approvals and conditions. <strong>Regulated by provincial authority. Fiduciary duty to you.</strong></p>
+          <div style="margin-top:16px;padding:12px 16px;background:#eff6ff;border-radius:12px;border:1px solid #bfdbfe">
+            <div style="font-size:11px;font-weight:800;color:#2563eb;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Typical cost</div>
+            <div style="font-size:22px;font-weight:800;color:#2563eb">$0 to buyer</div>
+          </div>
+        </div>
+        <div class="breakdown-card">
+          <div class="tag" style="background:#fef2f2;color:#dc2626">Not required</div>
+          <div class="icon">&#128100;</div>
+          <h3>Real Estate Agent</h3>
+          <p>Lists your home on MLS, shows it, presents offers. <strong>Carries no liability at closing. Their brokerage's E&O insurance rarely pays out.</strong> If your deal goes sideways, your lawyer fixes it.</p>
+          <div style="margin-top:16px;padding:12px 16px;background:#fef2f2;border-radius:12px;border:1px solid #fecaca">
+            <div style="font-size:11px;font-weight:800;color:#dc2626;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px">Typical cost</div>
+            <div style="font-size:22px;font-weight:800;color:#dc2626">$25,000+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIABILITY BREAKDOWN -->
+  <section class="section-sm" style="background:#fff;border-top:1px solid #e0e4eb;border-bottom:1px solid #e0e4eb">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px">
+        <div class="eyebrow" style="color:#dc2626">Liability comparison</div>
+        <h2 class="section-title">The biggest cheque.<br/><span style="color:#dc2626">The least accountability.</span></h2>
+      </div>
+      <div class="liability-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div style="background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:32px">
+          <div style="font-size:13px;font-weight:800;color:#16a34a;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px">&#9878;&#65039; Your lawyer</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px">
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#16a34a;font-weight:800;flex-shrink:0">&#10003;</span> <span>Mandatory professional liability (E&O) insurance</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#16a34a;font-weight:800;flex-shrink:0">&#10003;</span> <span>Personally liable for errors in title transfer</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#16a34a;font-weight:800;flex-shrink:0">&#10003;</span> <span>Holds your deposit in regulated trust account</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#16a34a;font-weight:800;flex-shrink:0">&#10003;</span> <span>Can be disbarred for negligence</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#16a34a;font-weight:800;flex-shrink:0">&#10003;</span> <span>Fiduciary duty — legally must act in your interest</span></li>
+          </ul>
+          <div style="margin-top:20px;text-align:center;padding:14px;background:#dcfce7;border-radius:12px">
+            <div style="font-size:13px;color:#166534;font-weight:700">Cost: <strong>$1,200 – $2,000</strong></div>
+          </div>
+        </div>
+        <div style="background:#fef2f2;border:2px solid #fecaca;border-radius:20px;padding:32px">
+          <div style="font-size:13px;font-weight:800;color:#dc2626;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px">&#128100; Your realtor</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px">
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#dc2626;font-weight:800;flex-shrink:0">&#10007;</span> <span>E&O insurance through brokerage — rarely pays claims</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#dc2626;font-weight:800;flex-shrink:0">&#10007;</span> <span>Not liable for pricing errors or market advice</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#dc2626;font-weight:800;flex-shrink:0">&#10007;</span> <span>Doesn't handle any money in the transaction</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#dc2626;font-weight:800;flex-shrink:0">&#10007;</span> <span>RECA complaints rarely result in meaningful penalty</span></li>
+            <li style="display:flex;gap:10px;font-size:14px;line-height:1.6"><span style="color:#dc2626;font-weight:800;flex-shrink:0">&#10007;</span> <span>Contract says "not responsible for verifying information"</span></li>
+          </ul>
+          <div style="margin-top:20px;text-align:center;padding:14px;background:#fee2e2;border-radius:12px">
+            <div style="font-size:13px;color:#991b1b;font-weight:700">Cost: <strong>$25,000+</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'RE ACTUALLY PAYING FOR -->
+  <section class="section" style="background:#0f172a">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px">
+        <div class="eyebrow" style="color:#f87171">Be honest</div>
+        <h2 class="section-title" style="color:#fff">What does a realtor<br/><span style="color:#f87171">actually do?</span></h2>
+        <p class="section-subtitle" style="color:#94a3b8;margin:12px auto 0">Here's the full list of services you're paying $25,000+ for.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:800px;margin:0 auto">
+        <div style="display:flex;gap:14px;padding:18px 20px;background:#1e293b;border-radius:14px;border:1px solid #334155">
+          <span style="font-size:22px;flex-shrink:0">&#128248;</span>
+          <div>
+            <div style="font-weight:700;color:#e2e8f0;margin-bottom:3px;font-size:15px">Take photos</div>
+            <div style="font-size:13px;color:#64748b;line-height:1.5">Photographers charge $200–$400. Your agent hires one and bills you 5%.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;padding:18px 20px;background:#1e293b;border-radius:14px;border:1px solid #334155">
+          <span style="font-size:22px;flex-shrink:0">&#128187;</span>
+          <div>
+            <div style="font-weight:700;color:#e2e8f0;margin-bottom:3px;font-size:15px">List on MLS</div>
+            <div style="font-size:13px;color:#64748b;line-height:1.5">A flat-fee listing service does this for $200–$500. No agent needed.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;padding:18px 20px;background:#1e293b;border-radius:14px;border:1px solid #334155">
+          <span style="font-size:22px;flex-shrink:0">&#128197;</span>
+          <div>
+            <div style="font-weight:700;color:#e2e8f0;margin-bottom:3px;font-size:15px">Schedule showings</div>
+            <div style="font-size:13px;color:#64748b;line-height:1.5">You already schedule everything else in your life. This is a calendar invite.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;padding:18px 20px;background:#1e293b;border-radius:14px;border:1px solid #334155">
+          <span style="font-size:22px;flex-shrink:0">&#128172;</span>
+          <div>
+            <div style="font-weight:700;color:#e2e8f0;margin-bottom:3px;font-size:15px">"Negotiate"</div>
+            <div style="font-size:13px;color:#64748b;line-height:1.5">Your lawyer reviews the contract. The agent relays numbers between parties.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;padding:18px 20px;background:#1e293b;border-radius:14px;border:1px solid #334155">
+          <span style="font-size:22px;flex-shrink:0">&#128202;</span>
+          <div>
+            <div style="font-weight:700;color:#e2e8f0;margin-bottom:3px;font-size:15px">Price your home</div>
+            <div style="font-size:13px;color:#64748b;line-height:1.5">They pull the same comps you can see online. AI does this better now.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;padding:18px 20px;background:#1e293b;border-radius:14px;border:1px solid #334155">
+          <span style="font-size:22px;flex-shrink:0">&#128196;</span>
+          <div>
+            <div style="font-weight:700;color:#e2e8f0;margin-bottom:3px;font-size:15px">Handle paperwork</div>
+            <div style="font-size:13px;color:#64748b;line-height:1.5">Standard AREA forms. Your lawyer handles the actual legal documents.</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;padding:20px;max-width:600px;margin-left:auto;margin-right:auto;background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);border-radius:14px">
+        <p style="color:#fca5a5;font-size:15px;font-weight:600;line-height:1.6">
+          Every single one of these tasks can be done by you, a flat-fee service, or AI. The only thing that legally requires a professional is the closing — and that's your <strong style="color:#fff">lawyer</strong>, not your realtor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="section" style="background:linear-gradient(160deg,#eff6ff 0%,#f5f7fa 100%)" id="calculator">
+    <div class="container">
+      <div class="calc-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+        <div>
+          <div class="eyebrow">The math doesn't lie</div>
+          <h2 class="section-title">See what you're<br/>giving away.</h2>
+          <p class="section-subtitle" style="margin-bottom:32px">Drag the slider to your home's value. Watch what stays in your pocket vs. what goes to a brokerage.</p>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:10px">
+              <label style="font-weight:700;font-size:15px">Your home's value</label>
+              <strong id="homeValue" style="color:#2563eb;font-size:20px">$620K</strong>
+            </div>
+            <input type="range" class="slider" id="priceSlider" min="200000" max="2000000" step="10000" value="620000" />
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#6b7280;margin-top:4px">
+              <span>$200K</span><span>$2M</span>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding:16px 20px;background:#fff3cd;border:1px solid #fbbf24;border-radius:12px">
+            <div style="font-size:13px;font-weight:700;color:#92400e" id="thinkAbout">Think about what you'd do with $28,302</div>
+            <div style="font-size:12px;color:#78350f;margin-top:4px">That's a car. A year of mortgage payments. Your kid's education. Not your realtor's boat payment.</div>
+          </div>
+        </div>
+        <div class="calc-card">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div class="result-row" style="background:#fef2f2;border:1px solid #fecaca">
+              <div>
+                <div style="font-weight:700;margin-bottom:2px">&#10060; Traditional Realtor</div>
+                <div style="font-size:12px;color:#6b7280">5% commission — standard brokerage</div>
+              </div>
+              <span id="realtorCost" style="font-weight:800;color:#dc2626;font-size:24px">$31,000</span>
+            </div>
+            <div class="result-row" style="background:#f0fdf4;border:1px solid #bbf7d0">
+              <div>
+                <div style="font-weight:700;margin-bottom:2px">&#9989; Lawyer + flat-fee listing</div>
+                <div style="font-size:12px;color:#6b7280">$500 listing + $1,200 lawyer</div>
+              </div>
+              <span style="font-weight:800;color:#16a34a;font-size:24px">$1,700</span>
+            </div>
+            <div style="text-align:center;padding:28px 20px;background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-radius:16px;border:1px solid #bfdbfe">
+              <div style="font-size:13px;font-weight:800;color:#2563eb;margin-bottom:4px;letter-spacing:0.08em;text-transform:uppercase">You keep</div>
+              <div id="youKeep" style="font-size:52px;font-weight:800;color:#2563eb;letter-spacing:-0.04em;line-height:1">$29,300</div>
+              <div style="font-size:13px;color:#6b7280;margin-top:6px">back in your pocket</div>
+            </div>
+            <a href="https://closr.ca" target="_blank" rel="noopener" class="btn-primary" style="display:block;text-align:center;width:100%;padding:16px;font-size:16px">Keep that money &rarr; sell with closr.ca</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ALTERNATIVE -->
+  <section class="section" style="background:#fff;border-top:4px solid #16a34a">
+    <div class="container" style="text-align:center">
+      <div class="eyebrow" style="color:#16a34a">The alternative</div>
+      <h2 class="section-title">So what do you actually need<br/><span style="color:#16a34a">to sell your home?</span></h2>
+      <p class="section-subtitle" style="margin:12px auto 48px">Three things. That's it. No realtor required.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:860px;margin:0 auto">
+        <div style="background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:32px 24px;text-align:center">
+          <div style="font-size:40px;margin-bottom:12px">&#128187;</div>
+          <div style="font-size:11px;font-weight:800;color:#6b7280;letter-spacing:0.1em;margin-bottom:6px">01</div>
+          <h3 style="font-size:18px;margin-bottom:8px">MLS Listing</h3>
+          <p style="font-size:14px;color:#6b7280;line-height:1.6">Flat-fee services list you on Realtor.ca for $200–$500. Same exposure as any agent listing.</p>
+          <div style="margin-top:16px;font-size:22px;font-weight:800;color:#16a34a">~$500</div>
+        </div>
+        <div style="background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:32px 24px;text-align:center">
+          <div style="font-size:40px;margin-bottom:12px">&#9878;&#65039;</div>
+          <div style="font-size:11px;font-weight:800;color:#6b7280;letter-spacing:0.1em;margin-bottom:6px">02</div>
+          <h3 style="font-size:18px;margin-bottom:8px">Real Estate Lawyer</h3>
+          <p style="font-size:14px;color:#6b7280;line-height:1.6">Handles everything legal — title transfer, contracts, trust accounting. The only professional you actually need.</p>
+          <div style="margin-top:16px;font-size:22px;font-weight:800;color:#16a34a">~$1,200</div>
+        </div>
+        <div style="background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:32px 24px;text-align:center">
+          <div style="font-size:40px;margin-bottom:12px">&#129302;</div>
+          <div style="font-size:11px;font-weight:800;color:#6b7280;letter-spacing:0.1em;margin-bottom:6px">03</div>
+          <h3 style="font-size:18px;margin-bottom:8px">AI Pricing + Support</h3>
+          <p style="font-size:14px;color:#6b7280;line-height:1.6">AI analyzes thousands of comps to price your home. Better than gut feel. Available 24/7.</p>
+          <div style="margin-top:16px;font-size:22px;font-weight:800;color:#16a34a">Included</div>
+        </div>
+      </div>
+      <div style="margin-top:40px;padding:24px 32px;background:linear-gradient(135deg,#f0fdf4,#eff6ff);border-radius:16px;border:1px solid #bbf7d0;display:inline-block">
+        <span style="font-size:15px;font-weight:700;color:#1a1f2e">Total cost: </span>
+        <span style="font-size:28px;font-weight:800;color:#16a34a">~$1,700</span>
+        <span style="font-size:15px;color:#6b7280;margin-left:8px">vs. $25,000+ with a realtor</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="cta-bottom">
+    <div class="container">
+      <div style="font-size:13px;font-weight:800;letter-spacing:0.15em;color:#4ade80;text-transform:uppercase;margin-bottom:16px">&#127464;&#127462; Built for Canadians</div>
+      <h2 style="color:#fff;font-size:48px;font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;line-height:1.1">
+        Ready to keep<br/>your equity?
+      </h2>
+      <p style="color:#94a3b8;font-size:18px;max-width:520px;margin:0 auto 40px;line-height:1.7">
+        closr.ca gives you everything you need to sell your home — AI pricing, MLS listing, a real estate lawyer, and human support. No commission. No realtor.
+      </p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="https://closr.ca" target="_blank" rel="noopener" class="btn-primary" style="font-size:17px;padding:18px 40px">Sell with closr.ca &rarr;</a>
+      </div>
+      <div style="margin-top:28px;font-size:13px;color:#475569">No commitment. No pressure. Just the truth about real estate.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div style="margin-bottom:16px">
+        <span style="font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.03em">you<span style="color:#f87171">don't</span>needarealtor.</span>
+      </div>
+      <p style="font-size:13px;color:#475569;max-width:480px;margin:0 auto 20px;line-height:1.6">
+        This site is for informational purposes. We believe in transparency and empowering homeowners with facts.
+        Selling with <a href="https://closr.ca" target="_blank" rel="noopener">closr.ca</a> is the smarter alternative.
+      </p>
+      <div style="font-size:12px;color:#334155">
+        &copy; 2026 youdontneedarealtor. Built in Alberta &#127464;&#127462;
+      </div>
+    </div>
+  </footer>
+
+  <!-- Calculator JS -->
+  <script>
+    const slider = document.getElementById('priceSlider');
+    const homeValueEl = document.getElementById('homeValue');
+    const realtorCostEl = document.getElementById('realtorCost');
+    const youKeepEl = document.getElementById('youKeep');
+    const thinkAboutEl = document.getElementById('thinkAbout');
+    const flatFee = 1700;
+
+    function formatMoney(n) {
+      return '$' + n.toLocaleString('en-CA');
+    }
+
+    function update() {
+      const val = parseInt(slider.value);
+      const realtorFee = Math.round(val * 0.05);
+      const savings = realtorFee - flatFee;
+
+      homeValueEl.textContent = '$' + (val / 1000).toFixed(0) + 'K';
+      realtorCostEl.textContent = formatMoney(realtorFee);
+      youKeepEl.textContent = formatMoney(savings);
+      thinkAboutEl.textContent = 'Think about what you\u2019d do with ' + formatMoney(savings);
+    }
+
+    slider.addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>
