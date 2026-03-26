@@ -223,6 +223,79 @@
 </head>
 <body>
 
+<!-- Beta Gate -->
+<div id="beta-gate" style="
+  position:fixed;inset:0;z-index:10000;
+  background:linear-gradient(145deg,#060d1a 0%,#1a0a0a 50%,#0f2240 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+">
+  <div style="
+    background:rgba(255,255,255,0.04);backdrop-filter:blur(40px);
+    border:1px solid rgba(255,255,255,0.08);border-radius:24px;
+    padding:48px 40px;max-width:420px;width:90%;text-align:center;
+  ">
+    <div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:8px;">
+      You Don't Need a <span style="color:#f87171;">Realtor</span>
+    </div>
+    <div style="
+      display:inline-flex;align-items:center;gap:6px;
+      padding:4px 12px;border-radius:20px;
+      background:rgba(248,113,113,0.15);color:#f87171;
+      font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+      margin-bottom:24px;
+    ">Beta Access</div>
+    <p style="color:rgba(255,255,255,0.5);font-size:14px;line-height:1.6;margin-bottom:32px;">
+      This site is currently in private beta.<br/>Enter the access code to continue.
+    </p>
+    <form id="beta-form">
+      <input
+        id="beta-pw"
+        type="password"
+        placeholder="Enter access code"
+        autofocus
+        style="
+          width:100%;padding:14px 18px;border-radius:12px;
+          border:1.5px solid rgba(255,255,255,0.12);
+          background:rgba(255,255,255,0.06);color:#fff;font-size:15px;
+          outline:none;margin-bottom:20px;font-family:inherit;
+        "
+      />
+      <p id="beta-error" style="color:#ef4444;font-size:13px;margin-bottom:12px;display:none;">Invalid access code. Try again.</p>
+      <button type="submit" style="
+        width:100%;padding:14px;border-radius:12px;border:none;
+        background:#4ade80;color:#0a2016;font-size:15px;font-weight:700;
+        cursor:pointer;font-family:inherit;transition:all .15s;
+      ">Enter Beta</button>
+    </form>
+  </div>
+</div>
+<script>
+(function(){
+  var HASH = "015f7f85eabe3dd34f3afeeaf7f9dc889b85b9f5b881936ca6f95b3fbf430173";
+  if (sessionStorage.getItem("ydnar_beta") === "1") {
+    document.getElementById("beta-gate").style.display = "none";
+    return;
+  }
+  document.getElementById("beta-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    var pw = document.getElementById("beta-pw").value.trim();
+    if (!pw) return;
+    var encoded = new TextEncoder().encode(pw);
+    var buf = await crypto.subtle.digest("SHA-256", encoded);
+    var hash = Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,"0"); }).join("");
+    if (hash === HASH) {
+      sessionStorage.setItem("ydnar_beta", "1");
+      document.getElementById("beta-gate").style.display = "none";
+    } else {
+      var err = document.getElementById("beta-error");
+      err.style.display = "block";
+      document.getElementById("beta-pw").style.borderColor = "#ef4444";
+    }
+  });
+})();
+</script>
+
   <!-- NAV -->
   <nav class="nav">
     <div class="container nav-inner">
