@@ -29,7 +29,7 @@ function updateSliderTrack() {
   const pct =
     ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
   slider.style.background =
-    'linear-gradient(to right, var(--green) ' +
+    'linear-gradient(to right, var(--bg-dark) ' +
     pct +
     '%, var(--border) ' +
     pct +
