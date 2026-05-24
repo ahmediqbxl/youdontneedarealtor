@@ -21,136 +21,43 @@
   <meta name="twitter:description" content="Realtors carry 0% liability at closing and take the biggest cheque. See what you could save." />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🏠</text></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Syne:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- ====================================================================
-     Beta Gate (inline to block before content renders)
-     ==================================================================== -->
-<div id="beta-gate" style="
-  position:fixed;inset:0;z-index:10000;
-  background:#ffffff;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',-apple-system,BlinkMacSystemFont,sans-serif;
-">
-  <div style="
-    background:#ffffff;
-    border:1px solid #e0e0e0;
-    padding:48px 40px;max-width:420px;width:90%;text-align:center;
-  ">
-    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:300;color:#111111;letter-spacing:-1px;margin-bottom:8px;">
-      You Don't Need a <span style="color:#b91c1c;">Realtor</span>
-    </div>
-    <div style="
-      display:inline-flex;align-items:center;gap:6px;
-      padding:4px 12px;
-      font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-      color:#555555;
-      margin-bottom:24px;
-    ">Beta Access</div>
-    <p style="color:#555555;font-size:14px;line-height:1.6;margin-bottom:32px;">
-      This site is currently in private beta.<br/>Enter the access code to continue.
-    </p>
-    <form id="beta-form">
-      <label for="beta-pw" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Access code</label>
-      <input
-        id="beta-pw"
-        type="password"
-        placeholder="Enter access code"
-        autofocus
-        autocomplete="off"
-        style="
-          width:100%;padding:14px 18px;
-          border:1.5px solid #e0e0e0;
-          background:#ffffff;color:#111111;font-size:15px;
-          outline:none;margin-bottom:20px;font-family:inherit;
-        "
-      />
-      <p id="beta-error" style="color:#b91c1c;font-size:13px;margin-bottom:12px;display:none;">Invalid access code. Try again.</p>
-      <button id="beta-btn" type="submit" style="
-        width:100%;padding:14px;border:none;
-        background:#111111;color:#ffffff;font-size:10px;font-weight:700;
-        letter-spacing:2px;text-transform:uppercase;
-        cursor:pointer;font-family:inherit;transition:all .15s;
-      ">Enter Beta</button>
-    </form>
-  </div>
-</div>
-<script>
-(function(){
-  var HASH = "62ad2d25fbd049976790a29e9820c8043c239d20bdef2b8ab5d3e9ff785cb05a";
-  if (sessionStorage.getItem("ydnar_beta") === "1") {
-    document.getElementById("beta-gate").style.display = "none";
-    return;
-  }
-  document.getElementById("beta-form").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    var pw = document.getElementById("beta-pw").value.trim();
-    if (!pw) return;
-    var btn = document.getElementById("beta-btn");
-    btn.disabled = true;
-    btn.textContent = "Checking\u2026";
-    var encoded = new TextEncoder().encode(pw);
-    var buf = await crypto.subtle.digest("SHA-256", encoded);
-    var hash = Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,"0"); }).join("");
-    if (hash === HASH) {
-      sessionStorage.setItem("ydnar_beta", "1");
-      document.getElementById("beta-gate").style.display = "none";
-    } else {
-      var err = document.getElementById("beta-error");
-      err.style.display = "block";
-      document.getElementById("beta-pw").style.borderColor = "#b91c1c";
-      btn.disabled = false;
-      btn.textContent = "Enter Beta";
-    }
-  });
-})();
-</script>
-
-<!-- ====================================================================
-     Nav
-     ==================================================================== -->
+<!-- Nav -->
 <nav class="nav">
   <div class="container nav-inner">
     <a href="/" class="nav-logo" aria-label="Home">you<span>don't</span>needarealtor.</a>
-    <div class="nav-links">
-      <a href="/news.html" class="nav-link">News</a>
-      <a href="https://closr.ca" class="nav-cta" target="_blank" rel="noopener">Try closr.ca</a>
-    </div>
+    <a href="https://closr.ca" class="nav-cta" target="_blank" rel="noopener">Try closr.ca</a>
   </div>
 </nav>
 
-<!-- ====================================================================
-     Section 1: Hero
-     ==================================================================== -->
+<!-- Hero -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge fade-in">
+    <div class="hero-badge">
       <span>&#127464;&#127462;</span>
       <span>What every homeowner should know</span>
     </div>
-    <h1 class="fade-in">
+    <h1>
       You don't need<br/>
       a realtor to sell<br/>
       <span class="accent">your home.</span>
     </h1>
-    <p class="hero-subtitle fade-in">
+    <p class="hero-subtitle">
       In a home sale, the person who does the least walks away with the
       <strong>biggest cheque</strong>. They carry the <strong>least liability</strong>,
       do work you could do yourself, and it's time Canadians knew the truth.
     </p>
-    <div class="hero-buttons fade-in">
+    <div class="hero-buttons">
       <div>
         <a href="#the-truth" class="btn-primary">See the breakdown</a>
         <div class="btn-sub">5-minute read. No sign-up required.</div>
       </div>
       <a href="#calculator" class="btn-outline">Calculate your savings</a>
     </div>
-    <div class="stats-row fade-in">
+    <div class="stats-row">
       <div class="stat-item">
         <div class="num">$25,000+</div>
         <div class="label">Avg. commission on Alberta home</div>
@@ -167,20 +74,18 @@
   </div>
 </section>
 
-<!-- ====================================================================
-     Section 2: Value Proposition — "The Truth About Your Home Sale"
-     ==================================================================== -->
+<!-- The Truth -->
 <section class="section" id="the-truth">
   <div class="container">
-    <div class="section-header fade-in">
+    <div class="section-header">
       <div class="eyebrow">The truth about your home sale</div>
       <h2 class="section-title">Who actually does what<br/>in a real estate transaction?</h2>
       <p class="section-subtitle">Every professional in your home sale carries liability and legal responsibility — except one.</p>
     </div>
 
-    <!-- Part A: 3-card comparison -->
-    <div class="breakdown-grid fade-in-group">
-      <div class="breakdown-card fade-in">
+    <!-- 3-card comparison -->
+    <div class="breakdown-grid">
+      <div class="breakdown-card">
         <div class="tag tag--green">Legally required</div>
         <div class="icon">&#9878;&#65039;</div>
         <h3>Real Estate Lawyer</h3>
@@ -190,7 +95,7 @@
           <div class="cost-value">$1,200 – $2,000</div>
         </div>
       </div>
-      <div class="breakdown-card fade-in">
+      <div class="breakdown-card">
         <div class="tag tag--green">Your lender requires</div>
         <div class="icon">&#127974;</div>
         <h3>Mortgage Broker</h3>
@@ -200,7 +105,7 @@
           <div class="cost-value">$0 to buyer</div>
         </div>
       </div>
-      <div class="breakdown-card breakdown-card--red fade-in">
+      <div class="breakdown-card breakdown-card--red">
         <div class="tag tag--red">Not required</div>
         <div class="icon">&#128100;</div>
         <h3>Real Estate Agent</h3>
@@ -212,50 +117,50 @@
       </div>
     </div>
 
-    <!-- Part B: What you're paying for — task grid -->
-    <div class="section-header fade-in" style="margin-top:64px">
+    <!-- What does a realtor actually do? -->
+    <div class="section-header" style="margin-top:64px">
       <div class="eyebrow" style="color:var(--red)">Be honest</div>
       <h2 class="section-title">What does a realtor<br/><span style="color:var(--red)">actually do?</span></h2>
       <p class="section-subtitle">Here's the full list of services you're paying $25,000+ for.</p>
     </div>
 
-    <div class="task-grid fade-in-group">
-      <div class="task-item fade-in">
+    <div class="task-grid">
+      <div class="task-item">
         <span class="task-icon">&#128248;</span>
         <div>
           <h4>Take photos</h4>
           <p>Photographers charge $200–$400. Your agent hires one and bills you 5%.</p>
         </div>
       </div>
-      <div class="task-item fade-in">
+      <div class="task-item">
         <span class="task-icon">&#128187;</span>
         <div>
           <h4>List on MLS</h4>
           <p>A flat-fee listing service does this for $200–$500. No agent needed.</p>
         </div>
       </div>
-      <div class="task-item fade-in">
+      <div class="task-item">
         <span class="task-icon">&#128197;</span>
         <div>
           <h4>Schedule showings</h4>
           <p>You already schedule everything else in your life. This is a calendar invite.</p>
         </div>
       </div>
-      <div class="task-item fade-in">
+      <div class="task-item">
         <span class="task-icon">&#128172;</span>
         <div>
           <h4>"Negotiate"</h4>
           <p>Your lawyer reviews the contract. The agent relays numbers between parties.</p>
         </div>
       </div>
-      <div class="task-item fade-in">
+      <div class="task-item">
         <span class="task-icon">&#128202;</span>
         <div>
           <h4>Price your home</h4>
           <p>They pull the same comps you can see online. AI does this better now.</p>
         </div>
       </div>
-      <div class="task-item fade-in">
+      <div class="task-item">
         <span class="task-icon">&#128196;</span>
         <div>
           <h4>Handle paperwork</h4>
@@ -264,45 +169,37 @@
       </div>
     </div>
 
-    <div class="callout callout--red fade-in">
+    <div class="callout callout--red">
       <p>Every single one of these tasks can be done by you, a flat-fee service, or AI. The only thing that legally requires a professional is the closing — and that's your <strong>lawyer</strong>, not your realtor.</p>
-    </div>
-
-    <!-- Buyer's agent objection -->
-    <div class="callout callout--info fade-in" style="margin-top:var(--sp-6)">
-      <h4>"But what about the buyer's agent?"</h4>
-      <p>You choose whether to offer a co-op commission. Many private sellers offer 1–2% to buyer's agents. On a $500K home, that's $5,000–$10,000 — still <strong>$15,000+ less</strong> than the standard 5%. And your listing on MLS looks identical to any agent's listing — buyers' agents show it the same way.</p>
     </div>
   </div>
 </section>
 
-<!-- ====================================================================
-     Section 3: How It Works
-     ==================================================================== -->
+<!-- How It Works -->
 <section class="section how-section">
   <div class="container" style="text-align:center">
-    <div class="section-header fade-in">
+    <div class="section-header">
       <div class="eyebrow">The alternative</div>
       <h2 class="section-title">So what do you actually need<br/><span style="color:var(--green)">to sell your home?</span></h2>
       <p class="section-subtitle">Three things. That's it. Private home sales are completely legal in every Canadian province.</p>
     </div>
 
-    <div class="steps-grid fade-in-group">
-      <div class="step-card fade-in">
+    <div class="steps-grid">
+      <div class="step-card">
         <div class="step-icon">&#128187;</div>
         <div class="step-num">01</div>
         <h3>MLS Listing</h3>
         <p>Flat-fee services list you on Realtor.ca for $200–$500. Same exposure as any agent listing.</p>
         <div class="step-cost">~$500</div>
       </div>
-      <div class="step-card fade-in">
+      <div class="step-card">
         <div class="step-icon">&#9878;&#65039;</div>
         <div class="step-num">02</div>
         <h3>Real Estate Lawyer</h3>
         <p>Handles everything legal — title transfer, contracts, trust accounting. The only professional you actually need.</p>
         <div class="step-cost">~$1,200</div>
       </div>
-      <div class="step-card fade-in">
+      <div class="step-card">
         <div class="step-icon">&#129302;</div>
         <div class="step-num">03</div>
         <h3>AI Pricing + Support</h3>
@@ -311,7 +208,7 @@
       </div>
     </div>
 
-    <div class="total-badge fade-in">
+    <div class="total-badge">
       <span class="total-label">Total cost: </span>
       <span class="total-amount">~$1,700</span>
       <span class="total-compare">vs. $25,000+ with a realtor</span>
@@ -319,12 +216,10 @@
   </div>
 </section>
 
-<!-- ====================================================================
-     Social Proof
-     ==================================================================== -->
+<!-- Testimonial -->
 <section class="section testimonial-section">
   <div class="container">
-    <div class="testimonial-card fade-in">
+    <div class="testimonial-card">
       <div class="testimonial-quote">
         "We sold our home in 18 days and kept over <strong>$27,000</strong> that would have gone to a realtor. The lawyer handled everything important. We'd never go back to the traditional way."
       </div>
@@ -339,13 +234,11 @@
   </div>
 </section>
 
-<!-- ====================================================================
-     Section 4: Calculator
-     ==================================================================== -->
+<!-- Calculator -->
 <section class="section calc-section" id="calculator">
   <div class="container">
     <div class="calc-grid">
-      <div class="fade-in">
+      <div>
         <div class="eyebrow">The math doesn't lie</div>
         <h2 class="section-title">See what you're<br/>giving away.</h2>
         <p class="section-subtitle" style="margin-bottom:32px;max-width:none">Drag the slider to your home's value. Watch what stays in your pocket vs. what goes to a brokerage.</p>
@@ -361,19 +254,13 @@
           </div>
         </div>
 
-        <!-- Mobile-only savings preview (co-located with slider) -->
-        <div class="mobile-savings fade-in">
-          <div class="mobile-savings-label">You keep</div>
-          <div class="mobile-savings-value" id="youKeepMobile"></div>
-        </div>
-
         <div class="think-box">
           <div class="think-title" id="thinkAbout"></div>
           <div class="think-sub">That's a car. A year of mortgage payments. Your kid's education. Not your realtor's boat payment.</div>
         </div>
       </div>
 
-      <div class="calc-card fade-in">
+      <div class="calc-card">
         <div class="calc-results">
           <div class="result-row result-row--red">
             <div>
@@ -398,25 +285,22 @@
             <a href="https://closr.ca" target="_blank" rel="noopener" class="btn-primary calc-cta">Keep that money &rarr; sell with closr.ca</a>
             <div class="btn-sub btn-sub--center">Free to explore. No account required.</div>
           </div>
-          <button class="share-btn" id="shareCalc" type="button">&#128279; Copy link to this calculation</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====================================================================
-     FAQ
-     ==================================================================== -->
+<!-- FAQ -->
 <section class="section faq-section" id="faq">
   <div class="container">
-    <div class="section-header fade-in">
+    <div class="section-header">
       <div class="eyebrow">Common questions</div>
       <h2 class="section-title">Still have doubts?</h2>
       <p class="section-subtitle">We hear these from almost every homeowner. Here are the straight answers.</p>
     </div>
 
-    <div class="faq-list fade-in">
+    <div class="faq-list">
       <details class="faq-item">
         <summary class="faq-question">Is it legal to sell my home without a realtor?</summary>
         <div class="faq-answer">
@@ -451,37 +335,31 @@
   </div>
 </section>
 
-<!-- ====================================================================
-     Section 5: Call-to-Action
-     ==================================================================== -->
+<!-- CTA -->
 <section class="cta-bottom">
   <div class="container">
-    <div class="fade-in">
-      <div class="cta-eyebrow">&#127464;&#127462; Built for Canadians</div>
-      <h2>Ready to keep<br/>your equity?</h2>
-      <p class="cta-subtitle">
-        closr.ca gives you everything you need to sell your home — AI pricing, MLS listing, a real estate lawyer, and human support. No commission. No realtor.
-      </p>
-      <div class="cta-buttons">
-        <div>
-          <a href="https://closr.ca" target="_blank" rel="noopener" class="btn-primary">Sell with closr.ca &rarr;</a>
-          <div class="btn-sub btn-sub--center btn-sub--dark">Takes 2 minutes. No commitment required.</div>
-        </div>
+    <div class="cta-eyebrow">&#127464;&#127462; Built for Canadians</div>
+    <h2>Ready to keep<br/>your equity?</h2>
+    <p class="cta-subtitle">
+      closr.ca gives you everything you need to sell your home — AI pricing, MLS listing, a real estate lawyer, and human support. No commission. No realtor.
+    </p>
+    <div class="cta-buttons">
+      <div>
+        <a href="https://closr.ca" target="_blank" rel="noopener" class="btn-primary">Sell with closr.ca &rarr;</a>
+        <div class="btn-sub btn-sub--center btn-sub--dark">Takes 2 minutes. No commitment required.</div>
       </div>
-      <div class="cta-features">
-        <div class="cta-feature"><span class="check">&#10003;</span> AI-powered pricing</div>
-        <div class="cta-feature"><span class="check">&#10003;</span> MLS listing included</div>
-        <div class="cta-feature"><span class="check">&#10003;</span> Real estate lawyer</div>
-        <div class="cta-feature"><span class="check">&#10003;</span> Human support</div>
-      </div>
-      <div class="cta-note">No commitment. No pressure. Just the truth about real estate.</div>
     </div>
+    <div class="cta-features">
+      <div class="cta-feature"><span class="check">&#10003;</span> AI-powered pricing</div>
+      <div class="cta-feature"><span class="check">&#10003;</span> MLS listing included</div>
+      <div class="cta-feature"><span class="check">&#10003;</span> Real estate lawyer</div>
+      <div class="cta-feature"><span class="check">&#10003;</span> Human support</div>
+    </div>
+    <div class="cta-note">No commitment. No pressure. Just the truth about real estate.</div>
   </div>
 </section>
 
-<!-- ====================================================================
-     Footer
-     ==================================================================== -->
+<!-- Footer -->
 <footer>
   <div class="container">
     <div class="footer-logo">you<span>don't</span>needarealtor.</div>
