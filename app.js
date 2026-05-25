@@ -1,55 +1,39 @@
-// Calculator
-var slider = document.getElementById('priceSlider');
-var homeValueEl = document.getElementById('homeValue');
-var realtorCostEl = document.getElementById('realtorCost');
-var youKeepEl = document.getElementById('youKeep');
-var thinkAboutEl = document.getElementById('thinkAbout');
-var FLAT_FEE = 1700;
-
-function formatMoney(n) {
-  return '$' + n.toLocaleString('en-CA');
-}
-
-function formatHomeValue(val) {
-  if (val >= 1000000) {
-    return '$' + (val / 1000000).toFixed(2).replace(/\.?0+$/, '') + 'M';
-  }
-  return '$' + (val / 1000).toFixed(0) + 'K';
-}
-
-function updateSliderTrack() {
-  var pct = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-  slider.style.background =
-    'linear-gradient(to right, var(--bg-dark) ' + pct + '%, var(--border) ' + pct + '%)';
-}
-
-function updateCalculator() {
-  var val = parseInt(slider.value);
-  var realtorFee = Math.round(val * 0.05);
-  var savings = realtorFee - FLAT_FEE;
-
-  homeValueEl.textContent = formatHomeValue(val);
-  realtorCostEl.textContent = formatMoney(realtorFee);
-  youKeepEl.textContent = formatMoney(savings);
-  thinkAboutEl.textContent = 'Think about what you\u2019d do with ' + formatMoney(savings);
-  updateSliderTrack();
-}
-
-if (slider) {
-  slider.addEventListener('input', updateCalculator);
-  updateCalculator();
-}
-
-// FAQ — close other items when one opens
-var faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(function (item) {
-  item.addEventListener('toggle', function () {
-    if (item.open) {
-      faqItems.forEach(function (other) {
-        if (other !== item && other.open) {
-          other.open = false;
-        }
-      });
-    }
+// Fade-up on scroll
+var observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) {
+    if (e.isIntersecting) e.target.classList.add('visible');
   });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(function (el) {
+  observer.observe(el);
 });
+
+// Animated compare bars
+setTimeout(function () {
+  var t = document.getElementById('bar-trad');
+  var c = document.getElementById('bar-closr');
+  if (t) t.style.width = '100%';
+  if (c) c.style.width = '39%';
+}, 400);
+
+// Amortization chart
+var chart = document.getElementById('amort-chart');
+if (chart) {
+  var pts = [0, 5, 10, 15, 20, 25];
+  var vals = pts.map(function (y) { return Math.round(11500 * Math.pow(1.06, y)); });
+  var mx = vals[vals.length - 1];
+  pts.forEach(function (yr, i) {
+    var col = document.createElement('div');
+    col.className = 'chart-col';
+    var bar = document.createElement('div');
+    bar.className = 'chart-bar';
+    var h = Math.max(5, Math.round((vals[i] / mx) * 72));
+    bar.style.cssText = 'height:' + h + 'px;background:#1D9E75;opacity:' + (0.22 + (i / 5) * 0.78).toFixed(2);
+    var lbl = document.createElement('div');
+    lbl.className = 'chart-lbl';
+    lbl.textContent = yr === 0 ? 'today' : 'yr ' + yr;
+    col.appendChild(bar);
+    col.appendChild(lbl);
+    chart.appendChild(col);
+  });
+}
