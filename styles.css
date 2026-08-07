@@ -10,8 +10,8 @@
   --f:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;
   --data:ui-monospace,'SF Mono','SFMono-Regular',Menlo,Consolas,monospace;
 }
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--f);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:var(--f);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:clip;max-width:100%}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 :focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:5px}
@@ -42,6 +42,8 @@ nav{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.75);backdrop-f
 .nav-cta{background:var(--ink)!important;color:#fff;font-size:14px;font-weight:600;padding:10px 18px;border-radius:24px;transition:transform .2s,opacity .2s}
 .nav-cta:hover{transform:translateY(-1px);opacity:.9}
 @media (max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+@media (max-width:720px){.nav-in{padding:0 22px}.logo{font-size:14px}}
+@media (max-width:480px){.nav-cta{display:none}}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:15px;font-weight:600;padding:15px 28px;border-radius:30px;transition:transform .2s,box-shadow .2s}
 .btn:active{transform:scale(.98)}
