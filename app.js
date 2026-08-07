@@ -1,4 +1,4 @@
-// Beta gate
+// ── Beta gate ──
 var BETA_HASH = '62ad2d25fbd049976790a29e9820c8043c239d20bdef2b8ab5d3e9ff785cb05a';
 
 function hashPassword(pw) {
@@ -44,42 +44,33 @@ gateForm.addEventListener('submit', function (e) {
   });
 });
 
-// Fade-up on scroll
-var observer = new IntersectionObserver(function (entries) {
-  entries.forEach(function (e) {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.fade-up').forEach(function (el) {
-  observer.observe(el);
-});
+// ── Scroll reveal + commission calculator ──
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if (reduce) {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var ro = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+    }, { threshold: .14, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(function (el) { ro.observe(el); });
+  }
 
-// Animated compare bars
-setTimeout(function () {
-  var t = document.getElementById('bar-trad');
-  var c = document.getElementById('bar-closr');
-  if (t) t.style.width = '100%';
-  if (c) c.style.width = '39%';
-}, 400);
-
-// Amortization chart
-var chart = document.getElementById('amort-chart');
-if (chart) {
-  var pts = [0, 5, 10, 15, 20, 25];
-  var vals = pts.map(function (y) { return Math.round(11500 * Math.pow(1.06, y)); });
-  var mx = vals[vals.length - 1];
-  pts.forEach(function (yr, i) {
-    var col = document.createElement('div');
-    col.className = 'chart-col';
-    var bar = document.createElement('div');
-    bar.className = 'chart-bar';
-    var h = Math.max(5, Math.round((vals[i] / mx) * 72));
-    bar.style.cssText = 'height:' + h + 'px;background:#1D9E75;opacity:' + (0.22 + (i / 5) * 0.78).toFixed(2);
-    var lbl = document.createElement('div');
-    lbl.className = 'chart-lbl';
-    lbl.textContent = yr === 0 ? 'today' : 'yr ' + yr;
-    col.appendChild(bar);
-    col.appendChild(lbl);
-    chart.appendChild(col);
-  });
-}
+  // commission calculator
+  var slider = document.getElementById('homeVal');
+  var homeOut = document.getElementById('calcHome');
+  var commOut = document.getElementById('calcComm');
+  if (!slider) return;
+  function money(n) { return '$' + Math.round(n).toLocaleString('en-CA'); }
+  function calc() {
+    var v = +slider.value;
+    homeOut.textContent = money(v);
+    var c = 0.07 * Math.min(v, 100000) + 0.03 * Math.max(v - 100000, 0);
+    commOut.textContent = '~' + money(c);
+    var pct = (v - slider.min) / (slider.max - slider.min) * 100;
+    slider.style.background = 'linear-gradient(90deg,var(--accent) ' + pct + '%,var(--line-2) ' + pct + '%)';
+  }
+  slider.addEventListener('input', calc);
+  calc();
+})();

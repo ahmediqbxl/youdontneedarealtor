@@ -3,273 +3,225 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>closr — Licensed Alberta Real Estate Brokerage</title>
-  <meta name="description" content="Flat-fee MLS listing for Alberta home sellers. Transparent costs, lawyer-closed transactions, full MLS access for buyers. Licensed Alberta brokerage." />
+  <title>Do You Need a Realtor in Alberta? No — Here's What You Actually Need</title>
+  <meta name="description" content="You don't legally need a realtor to sell your home in Alberta — only a lawyer is required to close. See what the law actually requires, what commission costs, and how to sell your home yourself." />
   <link rel="canonical" href="https://youdontneedarealtor.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_CA" />
-  <meta property="og:title" content="closr — Licensed Alberta Real Estate Brokerage" />
-  <meta property="og:description" content="Flat-fee MLS listing for Alberta home sellers. Transparent costs, lawyer-closed transactions, full MLS access for buyers." />
+  <meta property="og:title" content="Do You Need a Realtor in Alberta? No — Here's What You Actually Need" />
+  <meta property="og:description" content="You don't legally need a realtor to sell your home in Alberta — only a lawyer is required to close. See what the law requires, what commission costs, and how to sell your home yourself." />
   <meta property="og:url" content="https://youdontneedarealtor.com/" />
-  <meta property="og:site_name" content="closr" />
+  <meta property="og:site_name" content="youdontneedarealtor.ca" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="closr — Licensed Alberta Real Estate Brokerage" />
-  <meta name="twitter:description" content="Flat-fee MLS listing for Alberta home sellers. Transparent costs, lawyer-closed transactions." />
+  <meta name="twitter:title" content="Do You Need a Realtor in Alberta? No — Here's What You Actually Need" />
+  <meta name="twitter:description" content="You don't legally need a realtor to sell your home in Alberta — only a lawyer is required to close." />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🏠</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
-  <!-- BETA GATE -->
-  <div id="beta-gate">
-    <div class="gate-card">
-      <div class="gate-brand">cl<em>o</em>sr.</div>
-      <div class="gate-badge">Beta Access</div>
-      <p class="gate-desc">closr is currently in private beta.<br>Enter the access code to continue.</p>
-      <form id="gate-form">
-        <input type="password" id="gate-input" placeholder="Enter access code" autofocus />
-        <p id="gate-error">Invalid access code. Try again.</p>
-        <button type="submit" id="gate-btn" disabled>Enter Beta</button>
-      </form>
-    </div>
+<!-- BETA GATE -->
+<div id="beta-gate">
+  <div class="gate-card">
+    <div class="gate-brand">youdontneedarealtor<span class="ca">.ca</span></div>
+    <div class="gate-badge">Beta Access</div>
+    <p class="gate-desc">This site is currently in private beta.<br>Enter the access code to continue.</p>
+    <form id="gate-form">
+      <input type="password" id="gate-input" placeholder="Enter access code" autofocus />
+      <p id="gate-error">Invalid access code. Try again.</p>
+      <button type="submit" id="gate-btn" disabled>Enter Beta</button>
+    </form>
   </div>
+</div>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="brand">cl<em>o</em>sr</a>
+<nav>
+  <div class="nav-in">
+    <div class="logo">youdontneedarealtor<span class="ca">.ca</span></div>
     <div class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#selling">Selling</a>
-      <a href="#buying">Buying</a>
-      <a href="https://closr.ca">closr.ca</a>
-    </div>
-    <a href="https://closr.ca" class="nav-cta">List your home &rarr;</a>
-  </nav>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-text fade-up">
-      <div class="hero-eyebrow">Licensed Alberta brokerage &middot; RECA compliant</div>
-      <h1 class="hero-head">Real estate,<br>done <em>on your<br>own terms.</em></h1>
-      <p class="hero-body">Transparent costs. Flat-fee MLS listing. Every transaction closed by a licensed Alberta lawyer. No surprises — just a straightforward path to your next chapter.</p>
-      <div class="hero-actions">
-        <a href="https://closr.ca" class="btn-primary">List your home</a>
-        <a href="#how" class="btn-ghost">See how it works</a>
-      </div>
-    </div>
-    <div class="hero-card fade-up" style="transition-delay:.15s">
-      <div class="stat-block">
-        <div class="stat-num">$11,500</div>
-        <div class="stat-label">Average savings for an Alberta seller<br>on a $500,000 home</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-block">
-        <div class="stat-num" style="font-size:36px">$49,300</div>
-        <div class="stat-label">What that savings becomes invested<br>at 6% over 25 years</div>
-      </div>
-      <div class="stat-divider"></div>
-      <p class="stat-small">Alberta's standard commission is 7% on the first $100K + 3% on the remainder — roughly $19,000 on a $500K sale. closr's all-in cost is $7,500.</p>
+      <a href="#truth">The truth</a>
+      <a href="#cost">The cost</a>
+      <a href="#how">How to do it</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://closr.ca">See the platform →</a>
     </div>
   </div>
+</nav>
 
-  <!-- HOW IT WORKS -->
-  <div class="how" id="how">
-    <div class="how-inner fade-up">
-      <div class="section-eye">How it works</div>
-      <h2 class="section-head">From listing to close,<br><em>we handle the detail.</em></h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-title"><em>Price</em> your home</div>
-          <p class="step-body">Our AI pricing tool analyzes active Calgary and Edmonton MLS data to recommend a market-accurate list price — in minutes.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-title"><em>List</em> on MLS</div>
-          <p class="step-body">Your home goes live on MLS and Realtor.ca in about 15 minutes. Full listing, photos, and details — no waiting, no bottlenecks.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-title"><em>Manage</em> offers</div>
-          <p class="step-body">Receive, review, and respond to offers digitally. Track conditions and deadlines in one clear dashboard. A closr Advisor is available to guide you through every step.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <div class="step-title"><em>Close</em> with a lawyer</div>
-          <p class="step-body">Every closr transaction is closed by a licensed Alberta real estate lawyer. Clean, protected, and fully compliant with RECA regulations.</p>
-        </div>
+<header class="hero">
+  <div class="wrap">
+    <div class="q">Do you legally need a realtor in Alberta?</div>
+    <div class="answer">No<span class="p">.</span></div>
+    <p class="lead">Only a <b>lawyer</b> is required to close a home sale in Alberta. An agent never was — it was just the default. Here's what the law actually requires, what the assumption costs you, and how to sell your home yourself.</p>
+    <div class="btn-row">
+      <a class="btn btn-dark" href="#cost">See what it costs you</a>
+      <a class="btn btn-line" href="#how">How to do it <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <p class="hero-note">Alberta-specific · plain-English · not legal advice</p>
+  </div>
+</header>
+
+<section class="sec" id="truth" style="padding-top:40px">
+  <div class="wrap">
+    <div class="reveal center">
+      <div class="eyebrow">What the law actually requires</div>
+      <h2 class="h2" style="max-width:16ch;margin:0 auto">One of these is the law. The other is a habit.</h2>
+    </div>
+    <div class="two reveal">
+      <div class="two-card law">
+        <div class="two-tag">Actually required</div>
+        <div class="two-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A real estate lawyer to transfer title and close the deal</div>
+        <div class="two-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A valid written purchase contract both sides sign</div>
+        <div class="two-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Usually a current Real Property Report with compliance</div>
+        <div class="two-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Honest disclosure of what you know about the home</div>
       </div>
+      <div class="two-card habit">
+        <div class="two-tag">Assumed, not required</div>
+        <div class="two-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A listing agent to sell your home</s></span></div>
+        <div class="two-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A buyer's agent on the other side</s></span></div>
+        <div class="two-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A percentage commission on the sale price</s></span></div>
+        <div class="two-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>An MLS-only listing — mere posting is flat-fee</s></span></div>
+      </div>
+    </div>
+    <div class="ui fact reveal">
+      <div class="row"><span class="k">Required by law to close</span><span class="tag yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A lawyer</span></div>
+      <div class="row"><span class="k">Required to list or sell</span><span class="tag no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>An agent</span></div>
+      <div class="row"><span class="k">Legal to sell it yourself</span><span class="tag yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Yes</span></div>
     </div>
   </div>
+</section>
 
-  <!-- SELL & BUY -->
-  <div class="split">
-
-    <!-- SELL -->
-    <div class="pane fade-up" id="selling">
-      <span class="pane-tag tag-sell">Selling in Alberta</span>
-      <h2 class="pane-head">Know your costs<br>before you <em>list.</em></h2>
-      <p class="pane-sub">Alberta's commission structure is set by convention, not law. closr gives you a transparent, flat-fee alternative — with full MLS exposure and professional support.</p>
-
-      <div class="compare">
-        <div class="cmp">
-          <div class="cmp-top">
-            <span class="cmp-name">Standard Alberta commission</span>
-            <span class="cmp-val" style="color:var(--ink-soft)">$19,000</span>
-          </div>
-          <div class="cmp-track"><div class="cmp-fill" id="bar-trad" style="width:0%;background:#B4B2A9"></div></div>
-        </div>
-        <div class="cmp">
-          <div class="cmp-top">
-            <span class="cmp-name">closr — all in (listing + recommended co-op)</span>
-            <span class="cmp-val" style="color:var(--green)">$7,500</span>
-          </div>
-          <div class="cmp-track"><div class="cmp-fill" id="bar-closr" style="width:0%;background:var(--green)"></div></div>
-        </div>
-      </div>
-
-      <div class="rule"></div>
-      <div class="save-row">
-        <span class="save-lbl">Difference back in your pocket</span>
-        <span class="save-num">$11,500</span>
-      </div>
-
-      <div class="pills">
-        <span class="pill">0.5% listing fee at close</span>
-        <span class="pill">Co-op is your decision</span>
-        <span class="pill">MLS live in 15 minutes</span>
-        <span class="pill">AI-assisted pricing</span>
-        <span class="pill">Digital offer management</span>
-      </div>
+<!-- ICONIC: commission calculator -->
+<section class="sec" id="cost" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="reveal center">
+      <div class="eyebrow">The math nobody spells out</div>
+      <h2 class="h2" style="max-width:15ch;margin:0 auto 14px">See what the habit costs you.</h2>
+      <p class="lead" style="max-width:540px;margin:0 auto">Alberta commission commonly runs 7% on the first $100,000 and 3% on the rest — paid by the seller, out of the sale price. Move the slider.</p>
     </div>
-
-    <!-- BUY -->
-    <div class="pane fade-up" id="buying">
-      <span class="pane-tag tag-buy">Buying in Alberta</span>
-      <h2 class="pane-head">Browse every listing.<br>On your own <em>terms.</em></h2>
-      <p class="pane-sub">Access the full Calgary and Edmonton MLS — every active listing, full details, condition tracking, and offer tools. No obligation, no pressure, no clock running.</p>
-
-      <div class="compare">
-        <div class="cmp">
-          <div class="cmp-top">
-            <span class="cmp-name">Typical buyer agent fee (seller-paid, embedded)</span>
-            <span class="cmp-val" style="color:var(--ink-soft)">~$9,500</span>
-          </div>
-          <div class="cmp-track"><div class="cmp-fill" style="width:100%;background:#B4B2A9"></div></div>
+    <div class="calc-card reveal">
+      <div class="calc-k">Your home's value</div>
+      <div class="calc-home mono" id="calcHome">$600,000</div>
+      <input class="calc-slider" id="homeVal" type="range" min="200000" max="1500000" step="10000" value="600000" aria-label="Home value">
+      <div class="calc-scale"><span>$200K</span><span>$1.5M</span></div>
+      <div class="calc-out">
+        <div class="calc-box old">
+          <div class="lbl">Typical commission</div>
+          <div class="amt mono" id="calcComm">~$22,000</div>
+          <div class="sub">off what you walk away with</div>
         </div>
-        <div class="cmp">
-          <div class="cmp-top">
-            <span class="cmp-name">closr buyer access</span>
-            <span class="cmp-val" style="color:var(--green)">$0</span>
-          </div>
-          <div class="cmp-track"><div class="cmp-fill" style="width:1%;background:var(--green)"></div></div>
+        <div class="calc-box new">
+          <div class="lbl">On Closr</div>
+          <div class="amt mono">$0</div>
+          <div class="sub">a lawyer still closes the deal</div>
         </div>
       </div>
-
-      <div class="rule"></div>
-      <div class="save-row" style="align-items:flex-end">
-        <span class="save-lbl">Self-serve, lawyer-closed, RECA-compliant</span>
-      </div>
-
-      <div class="pills">
-        <span class="pill">Full MLS access</span>
-        <span class="pill">Calgary &amp; Edmonton</span>
-        <span class="pill">Condition tracking</span>
-        <span class="pill">Digital offers</span>
-        <span class="pill">No obligation</span>
-      </div>
+      <p class="calc-note">Illustrative only. Commission rates in Alberta are negotiable and not set by law — actual amounts vary by agreement. This is a common structure, not a quote.</p>
     </div>
-
+    <p class="calc-punch reveal">That's not the cost of selling a home. It's the cost of <span class="a">assuming you needed an agent to.</span></p>
   </div>
+</section>
 
-  <!-- AMORTIZATION -->
-  <div class="amort-section">
-    <div class="amort-inner">
-      <div class="amort-left fade-up">
-        <div class="section-eye">Your savings, compounded</div>
-        <div class="amort-big">$49,300</div>
-        <p class="amort-desc">$11,500 in commission savings, invested at a conservative 6% annual return over 25 years. A one-time transaction decision that shapes the next chapter of your financial life.</p>
-        <div class="chart" id="amort-chart"></div>
-        <div style="display:flex;justify-content:space-between;margin-top:2px">
-          <span style="font-size:10px;color:var(--ink-soft)">Today</span>
-          <span style="font-size:10px;color:var(--ink-soft)">Year 25</span>
-        </div>
+<section class="sec">
+  <div class="wrap">
+    <div class="reveal center">
+      <div class="eyebrow">Fair question</div>
+      <h2 class="h2" style="max-width:16ch;margin:0 auto 14px">"But doesn't a realtor actually do things?"</h2>
+      <p class="lead" style="max-width:560px;margin:0 auto">Yes — real work, worth naming honestly. The point isn't that the jobs don't matter. It's that each one can now be done directly, with software, or by the professional the law always required anyway.</p>
+    </div>
+    <div class="does-grid reveal">
+      <div class="does">
+        <div class="job"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>Pricing the home</div>
+        <p>An agent brings a market analysis. <b>Now:</b> recent comparable sales are available directly — the same data, shown to you instead of summarized for you.</p>
       </div>
-      <div class="amort-right fade-up" style="transition-delay:.12s">
-        <div class="section-eye" style="padding-top:0">What $11,500 can become</div>
-        <div class="alt-row">
-          <div class="alt">
-            <div class="alt-l">Mortgage principal</div>
-            <div class="alt-v">6 months ahead</div>
-          </div>
-          <div class="alt">
-            <div class="alt-l">TFSA contribution</div>
-            <div class="alt-v">1.6 years funded</div>
-          </div>
-        </div>
-        <div class="alt-row">
-          <div class="alt">
-            <div class="alt-l">Home renovation</div>
-            <div class="alt-v">Kitchen or bath</div>
-          </div>
-          <div class="alt">
-            <div class="alt-l">Emergency fund</div>
-            <div class="alt-v">Fully covered</div>
-          </div>
-        </div>
-        <div class="alt-row">
-          <div class="alt">
-            <div class="alt-l">RESP (child education)</div>
-            <div class="alt-v">4 years of savings</div>
-          </div>
-          <div class="alt">
-            <div class="alt-l">Family travel</div>
-            <div class="alt-v">5 years of trips</div>
-          </div>
-        </div>
+      <div class="does">
+        <div class="job"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></span>Getting it seen</div>
+        <p>Agents offer MLS exposure. <b>Now:</b> a flat-fee mere posting puts you on MLS without full commission, and direct marketplaces reach buyers searching your area.</p>
+      </div>
+      <div class="does">
+        <div class="job"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span>Handling offers</div>
+        <p>Agents relay and structure offers. <b>Now:</b> offer tools let you build, send, and counter directly — every version tracked, nothing lost in a phone call.</p>
+      </div>
+      <div class="does">
+        <div class="job"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>Paperwork &amp; closing</div>
+        <p>The part with real legal weight. <b>Now:</b> it's handled by a lawyer — required regardless of whether an agent was ever involved.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- TRUST STRIP -->
-  <div class="trust fade-up">
-    <div class="trust-item">
-      <div class="trust-label">RECA Licensed</div>
-      <p class="trust-body">closr operates as a licensed Alberta real estate brokerage under the Real Estate Act. Fully compliant, fully accountable.</p>
+<section class="sec" id="how" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="reveal center">
+      <div class="eyebrow">The practical part</div>
+      <h2 class="h2" style="max-width:18ch;margin:0 auto 14px">How to sell your home without a realtor in Alberta.</h2>
+      <p class="lead" style="max-width:560px;margin:0 auto">The whole process, start to keys. None of it requires a licensed agent — the last step requires a lawyer, and that's the one you keep.</p>
     </div>
-    <div class="trust-item">
-      <div class="trust-label">Lawyer-closed</div>
-      <p class="trust-body">Every transaction is closed by a licensed Alberta real estate lawyer. Your purchase is protected from offer to keys.</p>
-    </div>
-    <div class="trust-item">
-      <div class="trust-label">Transparent pricing</div>
-      <p class="trust-body">0.5% listing fee, paid at close. Co-op commission is the seller's choice — we recommend 1% to ensure full MLS exposure.</p>
-    </div>
-    <div class="trust-item">
-      <div class="trust-label">Alberta-built</div>
-      <p class="trust-body">Built in Calgary for the Alberta market. We know Calgary and Edmonton real estate — the neighbourhoods, the contracts, the pace.</p>
+    <div class="how-wrap reveal">
+      <div class="how-spine"></div>
+      <div class="how-step"><div class="how-node">01</div><div class="how-c"><h3>Price it on real comps</h3><p>Pull recent sales of similar homes nearby and set a realistic range. Price is the biggest lever — get it close and the rest follows.</p></div></div>
+      <div class="how-step"><div class="how-node">02</div><div class="how-c"><h3>Prepare the home and the paperwork</h3><p>Clean, declutter, get good photos. Order or locate a current Real Property Report with compliance so title can transfer cleanly.<span class="ab">Alberta · RPR + compliance</span></p></div></div>
+      <div class="how-step"><div class="how-node">03</div><div class="how-c"><h3>List it — direct, MLS, or both</h3><p>Post it where buyers look. A flat-fee mere posting gets you on MLS without full commission; a direct marketplace reaches buyers searching your area. No exclusivity required.</p></div></div>
+      <div class="how-step"><div class="how-node">04</div><div class="how-c"><h3>Show it safely</h3><p>Verify buyers are pre-approved before they visit, keep valuables secured, and don't show alone. Have your answers — roof, furnace, taxes, condo fees — ready.</p></div></div>
+      <div class="how-step"><div class="how-node">05</div><div class="how-c"><h3>Handle offers and conditions</h3><p>Use a proper written purchase contract, counter in writing, and track every condition — financing, inspection, deadlines — so nothing slips.<span class="ab">Alberta · written purchase contract</span></p></div></div>
+      <div class="how-step"><div class="how-node">06</div><div class="how-c"><h3>Close with a lawyer</h3><p>Your lawyer handles the title transfer, trust funds, and closing. The one required professional — and the one you were always going to pay.</p></div></div>
     </div>
   </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-brand">cl<em>o</em>sr</div>
-    <p class="footer-note">closr is a licensed Alberta real estate brokerage operating under RECA. All transactions are closed by a licensed Alberta lawyer. Commission savings estimates are based on a $500,000 purchase price and Alberta's standard commission structure (7% on first $100K + 3% on remainder). Investment projections assume 6% annual return over 25 years and are illustrative only.</p>
-    <div class="footer-right">
-      closr.ca<br>
-      Calgary, Alberta<br>
-      <a href="https://closr.ca" style="color:var(--green);text-decoration:none;">Get started &rarr;</a>
+<section class="sec" id="faq">
+  <div class="wrap faq-wrap">
+    <div class="reveal center" style="margin-bottom:8px">
+      <div class="eyebrow">Straight answers</div>
+      <h2 class="h2" style="max-width:14ch;margin:0 auto">The questions people actually ask.</h2>
     </div>
-  </footer>
+    <div class="reveal">
+      <div class="faq-item"><div class="faq-q">Is it legal to sell my house without a realtor in Alberta?</div><div class="faq-a">Yes. There's no law requiring a real estate agent to buy or sell a home in Alberta. The only professional the law requires for the transfer of ownership is a lawyer.</div></div>
+      <div class="faq-item"><div class="faq-q">Do I still need a lawyer?</div><div class="faq-a">Yes — this is the non-negotiable part. A real estate lawyer handles the title transfer, trust funds, and closing. It's required whether or not an agent is involved, which is exactly why skipping the agent doesn't skip the legal safeguard.</div></div>
+      <div class="faq-item"><div class="faq-q">Will buyers' agents refuse to show my home if I'm not paying commission?</div><div class="faq-a">Some might steer around it — a real consideration. You have options: offer a buyer-agent commission if you choose (your decision, not a rule), or reach buyers who aren't working with an agent at all, which is where direct marketplaces come in.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I still get on MLS?</div><div class="faq-a">Yes. A mere posting through a listing brokerage puts you on MLS for a flat fee, without full-service commission. You can list there and direct-to-buyer at the same time — there's no exclusivity requirement.</div></div>
+      <div class="faq-item"><div class="faq-q">Isn't doing it myself risky and complicated?</div><div class="faq-a">The hard part was never the individual steps — it was coordinating them without help. That coordination is what software now handles: pricing data, offer tracking, condition deadlines, and a lawyer for the close. The risk drops when the process is guided.</div></div>
+    </div>
+  </div>
+</section>
 
-  <script src="app.js"></script>
+<section class="sec">
+  <div class="wrap">
+    <div class="handoff reveal">
+      <div class="eyebrow">Where to actually do this</div>
+      <h2>You don't need a realtor. You do need a way to do it properly.</h2>
+      <p>Closr is the modern platform for the whole transaction — pricing, offers, showings, documents, and a lawyer-led close, in one place. No commission, either side.</p>
+      <a class="btn-white" href="https://closr.ca">Go to Closr<svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <div class="micro">Free for buyers and sellers, permanently.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo">youdontneedarealtor<span class="ca">.ca</span></div>
+        <p class="foot-tag">Plain-English answers on selling and buying a home in Alberta without an agent.</p>
+      </div>
+      <div class="foot-col">
+        <a href="https://closr.ca">Closr — the platform</a>
+        <a href="#how">How to sell without a realtor</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="foot-meta">youdontneedarealtor.ca is a project by Closr Inc., Calgary, Alberta. This site is general educational information about Alberta real estate, not legal advice — for your specific transaction, rely on your lawyer. © 2026 Closr Inc.</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
