@@ -23,158 +23,177 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🏠</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="closr.css" />
 </head>
 <body>
-<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<noscript><style>.rev{opacity:1!important;transform:none!important}</style></noscript>
 
 <!-- BETA GATE -->
 <div id="beta-gate">
   <div class="gate-card">
-    <div class="gate-brand">youdontneedarealtor<span class="ca">.ca</span></div>
+    <div class="gate-brand">youdontneedarealtor<i>.ca</i></div>
     <div class="gate-badge">Beta Access</div>
     <p class="gate-desc">This site is currently in private beta.<br>Enter the access code to continue.</p>
     <form id="gate-form">
-      <input type="password" id="gate-input" placeholder="Enter access code" autofocus />
+      <input class="input" type="password" id="gate-input" placeholder="Enter access code" autofocus />
       <p id="gate-error">Invalid access code. Try again.</p>
       <button type="submit" id="gate-btn" disabled>Enter Beta</button>
     </form>
   </div>
 </div>
 
-<nav>
+<nav id="nav">
   <div class="nav-in">
-    <div class="logo">youdontneedarealtor<span class="ca">.ca</span></div>
-    <div class="nav-links">
-      <a href="#truth">The truth</a>
+    <a class="logo" href="#top">youdontneedarealtor<i style="color:var(--muted);font-weight:500">.ca</i></a>
+    <div class="nav-primary">
+      <a class="nav-link" href="#truth" data-spy="truth">The law</a>
+      <a class="nav-link" href="#cost" data-spy="cost">The cost</a>
+      <a class="nav-link" href="#how" data-spy="how">How to do it</a>
+      <a class="nav-link" href="#faq" data-spy="faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="https://closr.ca">See the app <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <button class="nav-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <div class="nm-group"><div class="nm-sub">
+      <a href="#truth">The law</a>
       <a href="#cost">The cost</a>
       <a href="#how">How to do it</a>
       <a href="#faq">FAQ</a>
-      <a class="nav-cta" href="https://closr.ca">See the app →</a>
-    </div>
+    </div></div>
+    <a class="btn btn-primary" href="https://closr.ca">See the app</a>
   </div>
 </nav>
 
-<header class="hero">
+<!-- HERO -->
+<header class="hero-c" id="top">
   <div class="wrap">
     <div class="q">Do you legally need a realtor in Alberta?</div>
     <div class="answer">No<span class="p">.</span></div>
-    <p class="lead">Only a <b>lawyer</b> is required to close a home sale in Alberta. An agent never was — it was just the default. Here's what the law actually requires, what the assumption costs you, and how to sell your home yourself.</p>
-    <div class="btn-row">
-      <a class="btn btn-dark" href="#cost">See what it costs you</a>
-      <a class="btn btn-line" href="#how">How to do it <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+    <p class="lede">Only a <b>lawyer</b> is required to close a home sale in Alberta. An agent never was — it was just the default. Here's what the law actually requires, what the assumption costs you, and how to sell your home yourself.</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary" href="#cost">See what it costs you</a>
+      <a class="btn-text" href="#how">How to do it <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
     </div>
     <p class="hero-note">Alberta-specific · plain-English · not legal advice</p>
   </div>
 </header>
 
-<section class="sec" id="truth" style="padding-top:40px">
+<!-- TRUTH -->
+<section class="sec" id="truth">
   <div class="wrap">
-    <div class="reveal center">
-      <div class="eyebrow">What the law actually requires</div>
-      <h2 class="h2" style="max-width:16ch;margin:0 auto">One of these is the law. The other is a habit.</h2>
+    <div class="shead"><span class="snum">01</span><span class="seyebrow">What the law requires</span></div>
+    <div class="intro rev">
+      <h2 class="h2">One of these is the law. The other is a habit.</h2>
+      <p class="lede">Alberta law requires a lawyer to transfer title — not an agent. Everything else about using a realtor is convention, not a legal requirement.</p>
     </div>
-    <div class="two reveal">
-      <div class="two-card law">
-        <div class="two-tag">Actually required</div>
-        <div class="two-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A real estate lawyer to transfer title and close the deal</div>
-        <div class="two-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A valid written purchase contract both sides sign</div>
-        <div class="two-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Usually a current Real Property Report with compliance</div>
-        <div class="two-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Honest disclosure of what you know about the home</div>
+    <div class="compare rev">
+      <div class="compare-col req">
+        <div class="compare-tag">Actually required</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A real estate lawyer to transfer title and close the deal</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A valid written purchase contract both sides sign</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Usually a current Real Property Report with compliance</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Honest disclosure of what you know about the home</div>
       </div>
-      <div class="two-card habit">
-        <div class="two-tag">Assumed, not required</div>
-        <div class="two-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A listing agent to sell your home</s></span></div>
-        <div class="two-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A buyer's agent on the other side</s></span></div>
-        <div class="two-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A percentage commission on the sale price</s></span></div>
-        <div class="two-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>An MLS-only listing — mere posting is flat-fee</s></span></div>
+      <div class="compare-col hab">
+        <div class="compare-tag">Assumed, not required</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A listing agent to sell your home</s></span></div>
+        <div class="compare-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A buyer's agent on the other side</s></span></div>
+        <div class="compare-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>A percentage commission on the sale price</s></span></div>
+        <div class="compare-row"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span><s>An MLS-only listing — mere posting is flat-fee</s></span></div>
       </div>
     </div>
-    <div class="ui fact reveal">
-      <div class="row"><span class="k">Required by law to close</span><span class="tag yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A lawyer</span></div>
-      <div class="row"><span class="k">Required to list or sell</span><span class="tag no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>An agent</span></div>
-      <div class="row"><span class="k">Legal to sell it yourself</span><span class="tag yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Yes</span></div>
+    <div class="facts rev">
+      <div class="fact-row"><span class="k">Required by law to close</span><span class="v yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>A lawyer</span></div>
+      <div class="fact-row"><span class="k">Required to list or sell</span><span class="v no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>An agent</span></div>
+      <div class="fact-row"><span class="k">Legal to sell it yourself</span><span class="v yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Yes</span></div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="cost" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<!-- COST -->
+<section class="sec sec-paper" id="cost" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="reveal center">
-      <div class="eyebrow">The math nobody spells out</div>
-      <h2 class="h2" style="max-width:15ch;margin:0 auto 14px">See what the habit costs you.</h2>
-      <p class="lead" style="max-width:540px;margin:0 auto">Alberta commission commonly runs 7% on the first $100,000 and 3% on the rest — paid by the seller, out of the sale price. Move the slider.</p>
+    <div class="shead"><span class="snum">02</span><span class="seyebrow">The cost</span></div>
+    <div class="intro rev">
+      <h2 class="h2">See what the habit costs you.</h2>
+      <p class="lede">Alberta commission commonly runs 7% on the first $100,000 and 3% on the rest — paid by the seller, out of the sale price. Move the slider.</p>
     </div>
-    <div class="calc-card reveal">
+    <div class="calc rev">
       <div class="calc-k">Your home's value</div>
-      <div class="calc-home mono" id="calcHome">$600,000</div>
-      <input class="calc-slider" id="homeVal" type="range" min="200000" max="1500000" step="10000" value="600000" aria-label="Home value">
+      <div class="calc-home num" id="calcHome">$600,000</div>
+      <input class="slider" id="homeVal" type="range" min="200000" max="1500000" step="10000" value="600000" aria-label="Home value">
       <div class="calc-scale"><span>$200K</span><span>$1.5M</span></div>
       <div class="calc-out">
-        <div class="calc-box old"><div class="lbl">Typical commission</div><div class="amt mono" id="calcComm">~$22,000</div><div class="sub">off what you walk away with</div></div>
-        <div class="calc-box new"><div class="lbl">On Closr</div><div class="amt mono">$0</div><div class="sub">a lawyer still closes the deal</div></div>
+        <div class="calc-cell old"><div class="lbl">Typical commission</div><div class="amt num" id="calcComm">~$22,000</div><div class="csub">off what you walk away with</div></div>
+        <div class="calc-cell new"><div class="lbl">On Closr</div><div class="amt num">$0</div><div class="csub">a lawyer still closes the deal</div></div>
       </div>
       <p class="calc-note">Illustrative only. Commission rates in Alberta are negotiable and not set by law — actual amounts vary by agreement. This is a common structure, not a quote.</p>
     </div>
-    <p class="calc-punch reveal">That's not the cost of selling a home. It's the cost of <span class="a">assuming you needed an agent to.</span></p>
+    <p class="calc-punch rev">That's not the cost of selling a home. It's the cost of <span class="a">assuming you needed an agent to.</span></p>
   </div>
 </section>
 
+<!-- WHAT A REALTOR DOES -->
 <section class="sec">
-  <div class="wrap center">
-    <div class="reveal">
-      <div class="eyebrow">Fair question</div>
-      <h2 class="h2" style="max-width:16ch;margin:0 auto 14px">"But doesn't a realtor actually do things?"</h2>
-      <p class="lead" style="max-width:560px;margin:0 auto">Yes — real work, worth naming honestly. The point isn't that the jobs don't matter. It's that each one can now be done directly, with software, or by the professional the law always required anyway.</p>
+  <div class="wrap">
+    <div class="shead"><span class="snum">03</span><span class="seyebrow">A fair question</span></div>
+    <div class="intro rev">
+      <h2 class="h2">"But doesn't a realtor actually do things?"</h2>
+      <p class="lede">Yes — real work, worth naming honestly. The point isn't that the jobs don't matter. It's that each one can now be done directly, with software, or by the professional the law always required.</p>
     </div>
-    <div class="does-grid reveal" style="text-align:left">
-      <div class="does">
-        <div class="job"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>Pricing the home</div>
-        <p>An agent brings a market analysis. <b>Now:</b> software prices your home from real comparable sales and offers you a few strategies — the same data, shown to you.</p>
+    <div class="jobs rev">
+      <div class="job">
+        <h3>Pricing the home</h3>
+        <p>An agent brings a market analysis. <b>Now:</b> software prices your home from real comparable sales and offers a few strategies — the same data, shown to you.</p>
       </div>
-      <div class="does">
-        <div class="job"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></span>Getting it seen</div>
+      <div class="job">
+        <h3>Getting it seen</h3>
         <p>Agents offer MLS exposure. <b>Now:</b> a flat-fee mere posting puts you on MLS, and a direct marketplace matches buyers to your home automatically.</p>
       </div>
-      <div class="does">
-        <div class="job"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span>Handling offers</div>
+      <div class="job">
+        <h3>Handling offers</h3>
         <p>Agents relay and structure offers. <b>Now:</b> offers land on one ledger you can see — counter, accept, and track every revision on the record.</p>
       </div>
-      <div class="does">
-        <div class="job"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>Paperwork &amp; closing</div>
+      <div class="job">
+        <h3>Paperwork &amp; closing</h3>
         <p>The part with real legal weight. <b>Now:</b> it's handled by a lawyer — required regardless of whether an agent was ever involved.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="how" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<!-- HOW -->
+<section class="sec sec-paper" id="how" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="reveal center">
-      <div class="eyebrow">The practical part</div>
-      <h2 class="h2" style="max-width:18ch;margin:0 auto 14px">How to sell your home without a realtor in Alberta.</h2>
-      <p class="lead" style="max-width:560px;margin:0 auto">The whole process, start to keys. None of it requires a licensed agent — the last step requires a lawyer, and that's the one you keep.</p>
+    <div class="shead"><span class="snum">04</span><span class="seyebrow">How to do it</span></div>
+    <div class="intro rev">
+      <h2 class="h2">Sell your home without a realtor in Alberta.</h2>
+      <p class="lede">The whole process, start to keys. None of it requires a licensed agent — the last step requires a lawyer, and that's the one you keep.</p>
     </div>
-    <div class="how-wrap reveal">
-      <div class="how-spine"></div>
-      <div class="how-step"><div class="how-node">01</div><div class="how-c"><h3>Price it on real comps</h3><p>Pull recent sales of similar homes nearby and set a realistic range. Software can do this for you now — the pricing engine in Closr returns three strategies from comparable sales.</p></div></div>
-      <div class="how-step"><div class="how-node">02</div><div class="how-c"><h3>Prepare the home and the paperwork</h3><p>Clean, declutter, take good photos — or record a short walkthrough video and let the listing draft itself. Locate a current Real Property Report with compliance so title can transfer cleanly.<span class="ab">Alberta · RPR + compliance</span></p></div></div>
-      <div class="how-step"><div class="how-node">03</div><div class="how-c"><h3>List it — direct, MLS, or both</h3><p>Post it where buyers look. A flat-fee mere posting gets you on MLS; a direct marketplace matches pre-qualified buyers to your home. No exclusivity required.</p></div></div>
-      <div class="how-step"><div class="how-node">04</div><div class="how-c"><h3>Meet buyers and handle offers</h3><p>Talk to buyers directly, and keep offers on one ledger — counter or accept in writing, with every revision recorded. Verify buyers are serious before you show.</p></div></div>
-      <div class="how-step"><div class="how-node">05</div><div class="how-c"><h3>Track the conditions</h3><p>Financing, inspection, title review — track each condition and its deadline so nothing slips before close.<span class="ab">Alberta · written purchase contract</span></p></div></div>
-      <div class="how-step"><div class="how-node">06</div><div class="how-c"><h3>Close with a lawyer</h3><p>Your lawyer handles the title transfer, trust funds, and closing. The one required professional — and the one you were always going to pay.</p></div></div>
+    <div class="steps rev">
+      <div class="step"><span class="sn">01</span><div><h3>Price it on real comps</h3><p>Pull recent sales of similar homes nearby and set a realistic range. Software can do this now — Closr's pricing engine returns three strategies from comparable sales.</p></div></div>
+      <div class="step"><span class="sn">02</span><div><h3>Prepare the home and the paperwork</h3><p>Clean, declutter, take good photos — or record a short walkthrough and let the listing draft itself. Locate a current Real Property Report with compliance so title can transfer cleanly.<span class="ab">Alberta · RPR + compliance</span></p></div></div>
+      <div class="step"><span class="sn">03</span><div><h3>List it — direct, MLS, or both</h3><p>Post it where buyers look. A flat-fee mere posting gets you on MLS; a direct marketplace matches pre-qualified buyers to your home. No exclusivity required.</p></div></div>
+      <div class="step"><span class="sn">04</span><div><h3>Meet buyers and handle offers</h3><p>Talk to buyers directly, and keep offers on one ledger — counter or accept in writing, with every revision recorded. Verify buyers are serious before you show.</p></div></div>
+      <div class="step"><span class="sn">05</span><div><h3>Track the conditions</h3><p>Financing, inspection, title review — track each condition and its deadline so nothing slips before close.<span class="ab">Alberta · written purchase contract</span></p></div></div>
+      <div class="step"><span class="sn">06</span><div><h3>Close with a lawyer</h3><p>Your lawyer handles the title transfer, trust funds, and closing. The one required professional — and the one you were always going to pay.</p></div></div>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="sec" id="faq">
-  <div class="wrap faq-wrap">
-    <div class="reveal center" style="margin-bottom:8px">
-      <div class="eyebrow">Straight answers</div>
-      <h2 class="h2" style="max-width:14ch;margin:0 auto">The questions people actually ask.</h2>
+  <div class="wrap">
+    <div class="shead"><span class="snum">05</span><span class="seyebrow">Straight answers</span></div>
+    <div class="intro rev">
+      <h2 class="h2">The questions people actually ask.</h2>
+      <p class="lede">Plain-English answers about selling and buying a home in Alberta without an agent.</p>
     </div>
-    <div class="reveal">
+    <div class="faq rev">
       <div class="faq-item"><div class="faq-q">Is it legal to sell my house without a realtor in Alberta?</div><div class="faq-a">Yes. There's no law requiring a real estate agent to buy or sell a home in Alberta. The only professional the law requires for the transfer of ownership is a lawyer.</div></div>
       <div class="faq-item"><div class="faq-q">Do I still need a lawyer?</div><div class="faq-a">Yes — this is the non-negotiable part. A real estate lawyer handles the title transfer, trust funds, and closing. It's required whether or not an agent is involved, which is exactly why skipping the agent doesn't skip the legal safeguard.</div></div>
       <div class="faq-item"><div class="faq-q">Isn't doing it myself risky and complicated?</div><div class="faq-a">The hard part was never the individual steps — it was coordinating them without help. That coordination is what software now handles: pricing from comps, matching buyers, tracking offers and condition deadlines, and a lawyer for the close. The risk drops when the process is guided.</div></div>
@@ -183,14 +202,15 @@
   </div>
 </section>
 
+<!-- HANDOFF CTA -->
 <section class="sec">
   <div class="wrap">
-    <div class="handoff reveal">
-      <div class="eyebrow">Where to actually do this</div>
-      <h2>You don't need a realtor. You do need a way to do it properly.</h2>
+    <div class="handoff rev">
+      <div class="eyebrow" style="margin-bottom:16px">Where to actually do this</div>
+      <h2 class="h2">You don't need a realtor. You do need a way to do it properly.</h2>
       <p>Closr is a free Alberta app that runs the whole transaction — so you're not doing it alone, you're doing it guided.</p>
-      <div class="steps"><span>List from a video</span><span>Priced on comps</span><span>Meet buyers directly</span><span>Offers &amp; conditions tracked</span><span>Lawyer closes it</span></div>
-      <a class="btn-white" href="https://closr.ca">Go to Closr<svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <div class="steps-inline"><span>List from a video</span><span>Priced on comps</span><span>Meet buyers directly</span><span>Offers &amp; conditions tracked</span><span>Lawyer closes it</span></div>
+      <a class="btn btn-primary" href="https://closr.ca">Go to Closr <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
       <div class="micro">Free for buyers and sellers. A licensed Alberta lawyer completes every deal.</div>
     </div>
   </div>
@@ -198,21 +218,32 @@
 
 <footer>
   <div class="wrap">
-    <div class="foot">
-      <div>
-        <div class="logo">youdontneedarealtor<span class="ca">.ca</span></div>
-        <p class="foot-tag">Plain-English answers on selling and buying a home in Alberta without an agent.</p>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">youdontneedarealtor<i style="color:var(--muted)">.ca</i></div>
+        <p>Plain-English answers on selling and buying a home in Alberta without an agent.</p>
       </div>
-      <div class="foot-col">
-        <a href="https://closr.ca">Closr — the app</a>
-        <a href="#how">How to sell without a realtor</a>
-        <a href="#faq">FAQ</a>
+      <div class="foot-cols">
+        <div class="foot-col"><h5>Closr</h5><a href="https://closr.ca">The app</a><a href="#how">How to sell</a><a href="#faq">FAQ</a></div>
       </div>
     </div>
-    <div class="foot-meta">youdontneedarealtor.ca is a project by Closr Inc., Calgary, Alberta. This site is general educational information about Alberta real estate, not legal advice — for your specific transaction, rely on your lawyer. © 2026 Closr Inc.</div>
+    <div class="foot-spine">
+      <div class="spine">
+        <span class="spine-line" style="background:var(--line)"></span>
+        <div class="spine-node"><span class="spine-dot"></span><span class="spine-l" style="color:var(--faint)">Price</span></div>
+        <div class="spine-node"><span class="spine-dot"></span><span class="spine-l" style="color:var(--faint)">Prepare</span></div>
+        <div class="spine-node"><span class="spine-dot"></span><span class="spine-l" style="color:var(--faint)">List</span></div>
+        <div class="spine-node"><span class="spine-dot"></span><span class="spine-l" style="color:var(--faint)">Offers</span></div>
+        <div class="spine-node"><span class="spine-dot"></span><span class="spine-l" style="color:var(--faint)">Conditions</span></div>
+        <div class="spine-node"><span class="spine-dot"></span><span class="spine-l" style="color:var(--faint)">Lawyer</span></div>
+        <div class="spine-node"><span class="spine-dot"></span><span class="spine-l" style="color:var(--faint)">Keys</span></div>
+      </div>
+    </div>
+    <div class="foot-legal">youdontneedarealtor.ca is a project by Closr Inc., Calgary, Alberta. This site is general educational information about Alberta real estate, not legal advice — for your specific transaction, rely on your lawyer. © 2026 Closr Inc.</div>
   </div>
 </footer>
 
 <script src="app.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

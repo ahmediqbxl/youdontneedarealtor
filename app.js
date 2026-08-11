@@ -47,30 +47,29 @@ gateForm.addEventListener('submit', function (e) {
 // ── Scroll reveal + commission calculator ──
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var reveals = document.querySelectorAll('.reveal');
-  if (reduce) {
-    reveals.forEach(function (el) { el.classList.add('in'); });
+  var revs = [].slice.call(document.querySelectorAll('.rev'));
+  if (reduce || !('IntersectionObserver' in window)) {
+    revs.forEach(function (e) { e.classList.add('in'); });
   } else {
-    var ro = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
-    }, { threshold: .14, rootMargin: '0px 0px -50px 0px' });
-    reveals.forEach(function (el) { ro.observe(el); });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    revs.forEach(function (e) { io.observe(e); });
+    setTimeout(function () { revs.forEach(function (e) { e.classList.add('in'); }); }, 1600);
   }
 
-  // commission calculator
-  var slider = document.getElementById('homeVal');
-  var homeOut = document.getElementById('calcHome');
-  var commOut = document.getElementById('calcComm');
+  // commission calculator — real Alberta structure (7% first $100k, 3% remainder)
+  var slider = document.getElementById('homeVal'),
+      homeOut = document.getElementById('calcHome'),
+      commOut = document.getElementById('calcComm');
   if (!slider) return;
   function money(n) { return '$' + Math.round(n).toLocaleString('en-CA'); }
   function calc() {
-    var v = +slider.value;
-    homeOut.textContent = money(v);
+    var v = +slider.value; homeOut.textContent = money(v);
     var c = 0.07 * Math.min(v, 100000) + 0.03 * Math.max(v - 100000, 0);
     commOut.textContent = '~' + money(c);
     var pct = (v - slider.min) / (slider.max - slider.min) * 100;
-    slider.style.background = 'linear-gradient(90deg,var(--accent) ' + pct + '%,var(--line-2) ' + pct + '%)';
+    slider.style.background = 'linear-gradient(90deg,var(--accent) ' + pct + '%,var(--line2) ' + pct + '%)';
   }
-  slider.addEventListener('input', calc);
-  calc();
+  slider.addEventListener('input', calc); calc();
 })();
